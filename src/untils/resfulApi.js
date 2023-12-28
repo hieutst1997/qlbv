@@ -12,10 +12,7 @@ axios.interceptors.response.use(
         return response.data
     },
     async (error) => {
-        if (error?.data?.errorCode === 401) {
-            // something
-        }
-        return Promise.reject(error)
+        return constants.ERRORCODE['ma loi tu back end']
     }
 )
 

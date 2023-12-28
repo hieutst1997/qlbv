@@ -1,5 +1,7 @@
-import SIDEBAR from './sideBar'
+import SIDEBAR from './sideBar';
+import ERRORCODE from './errorCode';
 
 export default {
-  SIDEBAR
+  SIDEBAR,
+  ERRORCODE
 }

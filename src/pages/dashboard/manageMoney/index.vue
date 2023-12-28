@@ -1,11 +1,12 @@
 <template>
-	<div>this is home</div>
+	<div>this is Manage Money</div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
+import { useStore } from "vuex";
 export default defineComponent({
-	name: "Home",
+	name: "ManageMoney",
 	setup() {
 		const store = useStore();
 
