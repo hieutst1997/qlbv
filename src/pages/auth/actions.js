@@ -1,22 +1,21 @@
 import services from '@/services';
 
+const login = async (paypload) => {
+    const response = await services.AUTH.login({
+        email: paypload.email,
+        password: paypload.password
+    })
 
-const actionsDemo = ({paypload}) => {
-    return {
-        
+    if (response) {
+        console.log(response)
+    } else {
+        return alert('đã xảy ra lỗi vui lòng thử lại')
     }
+
+
 }
 
-
-const submitFormOneDemo = (payload)=> {
-    
-    console.log(payload)
-    return {    
-        data: '123469465'
-    }
-}
 
 export default {
-    actionsDemo,
-    submitFormOneDemo
+    login,
 }

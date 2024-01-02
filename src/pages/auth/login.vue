@@ -21,12 +21,12 @@
             <div class="mx-auto max-w-xs">
               <div>
                 <Field
-                  name="userName"
+                  name="email"
                   class="w-full p-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                   type="text"
                   placeholder="Tài khoản"
                 />
-                <ErrorMessage name="userName" class = "px-1 text-xs text-red-500" />
+                <ErrorMessage name="email" class = "px-1 text-xs text-red-500" />
               </div>
               <div>
                 <Field
@@ -75,7 +75,7 @@ export default defineComponent({
   setup() {
     const store = useStore();
     const schema = Yup.object({
-      userName: Yup.string()
+      email: Yup.string()
         .required("Vui lòng không để trống")
         .min(1, "Tên quá ngắn")
         .max(64, "Tên quá dài"),
@@ -85,19 +85,17 @@ export default defineComponent({
 
     const handleLogin = async (values) => {
       const payload = {
-        userName: values.userName,
+        email: values.email,
         password: values.password,
       };
 
-      const response = actions.submitFormOneDemo(payload);
-
-      console.log(response);
+      actions.login(payload);
     };
 
     const onInvalidSubmit = ({ values, errors, results }) => {
-        console.log(values); // current form values
-        console.log(errors); // a map of field names and their first error message
-        console.log(results); // a detailed map of field names and their validation results
+      console.log(values); // current form values
+      console.log(errors); // a map of field names and their first error message
+      console.log(results); // a detailed map of field names and their validation results
     };
 
     return {

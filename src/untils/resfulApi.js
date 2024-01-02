@@ -12,7 +12,7 @@ axios.interceptors.response.use(
         return response.data
     },
     async (error) => {
-        return constants.ERRORCODE['ma loi tu back end']
+        return `error: ${error}`
     }
 )
 

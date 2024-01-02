@@ -1,5 +1,5 @@
-import ZALO from './zaloController';
+import AUTH from './auth';
 
 export default {
-    ZALO
+    AUTH
 }
